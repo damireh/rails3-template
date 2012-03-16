@@ -45,7 +45,7 @@ end
 run 'bundle install'
 
 # setup test environment
-puts "Seting up test environment...".white_on_blue
+puts "Seting up test environment".white_on_magenta
 empty_directory 'test'
 
 create_file 'test/minitest_helper.rb' do
@@ -74,3 +74,23 @@ end
 
 task :stats => 'spec:statsetup'}
 end
+
+# setup git
+puts "Setting up Git".white_on_magenta
+git :init
+git :add => '.'
+git :commit => "-am 'initial commit'"
+
+# setup devise and cancan
+puts "Installing Devise".white_on_blue
+generate 'devise:install'
+puts "Generating Devise User model".white_on_magenta
+generate 'devise User'
+puts "Generating Devise views".white_on_magenta
+generate 'devise:views'
+puts "Installing CanCan".white_on_blue
+generate 'cancan:ability'
+rake 'db:migrate'
+
+git :add => '.'
+git :commit => "-am 'installed devise and cancan, generated user model and devise views'"
