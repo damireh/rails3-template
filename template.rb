@@ -11,8 +11,24 @@ require "colored"
 require "bundler"
 
 # create rvmrc
-puts "Creating rvmrc with default ruby using gemset #{app_name}".black_on_green
-create_file '.rvmrc', 'rvm gemset default@#{app_name}'
+puts "Setting up RVM gemset and Ruby version".black_on_magenta
+
+# strip colors in case rvm_pretty_print_flag is enabled
+rvm_list = `rvm list`.gsub(Regexp.new("\e\\[.?.?.?m"), '')
+
+current_ruby = rvm_list.match(/=\*\ ([^ ]+)/)[1]
+ruby = ask "Which RVM Ruby would you like to use? [#{current_ruby}]".black_on_white
+ruby = current_ruby if ruby.blank?
+
+gemset = ask "What would you like to name the custom gemset? [#{@app_name}]".black_on_white
+gemset = @app_name if gemset.blank?
+
+# create the gemset
+run "rvm #{ruby} gemset create #{gemset}"
+
+# create rvmrc and mark it as trusted
+create_file ".rvmrc", "rvm use #{ruby}@#{gemset}"
+run "rvm rvmrc trust #{app_path}"
 
 # remove rails default files
 puts "Removing rails default files".white_on_red
@@ -84,9 +100,9 @@ git :commit => "-am 'initial commit'"
 # setup devise and cancan
 puts "Installing Devise".white_on_blue
 generate 'devise:install'
-puts "Generating Devise User model".white_on_magenta
+puts "Generating Devise User model".black_on_yellow
 generate 'devise User'
-puts "Generating Devise views".white_on_magenta
+puts "Generating Devise views".black_on_yellow
 generate 'devise:views'
 puts "Installing CanCan".white_on_blue
 generate 'cancan:ability'
