@@ -10,6 +10,17 @@ end
 require "colored"
 require "bundler"
 
+# Directories for template partials and static files
+@template_root = File.expand_path(File.join(File.dirname(__FILE__)))
+@partials     = File.join(@template_root, 'partials')
+@static_files = File.join(@template_root, 'files')
+
+# copy a static file from the template into the new application
+def copy_static_file(path)
+  remove_file path
+  create_file path, File.read(File.join(@static_files, path))
+end
+
 # create rvmrc
 puts "Setting up RVM gemset and Ruby version".black_on_magenta
 
@@ -34,6 +45,19 @@ run "rvm rvmrc trust #{app_path}"
 puts "Removing rails default files".white_on_red
 remove_file 'public/index.html'
 remove_file 'app/assets/images/rails.png'
+
+# add twitter bootstrap and h5bp
+puts "Adding Twitter Bootstrap and HTML5 Boilerplate files"
+copy_static_file "vendor/assets/stylesheets/bootstrap-responsive.min.css"
+copy_static_file "vendor/assets/stylesheets/bootstrap.min.css"
+copy_static_file "vendor/assets/javascripts/bootstrap.min.js"
+copy_static_file "vendor/assets/images/glyphicons-halflings-white.png"
+copy_static_file "vendor/assets/images/glyphicons-halflings.png"
+
+copy_static_file "public/apple-touch-icon.png"
+copy_static_file "public/favicon.ico"
+copy_static_file "public/humans.txt"
+copy_static_file "vendor/assets/javascripts/modernizr-2.5.3.min.js"
 
 # add most used gems
 puts "Installing frequently used Gems (Devise, CanCan, Thin, Debugger, Minitest)".white_on_blue
@@ -100,12 +124,16 @@ git :commit => "-am 'initial commit'"
 # setup devise and cancan
 puts "Installing Devise".white_on_blue
 generate 'devise:install'
+
 puts "Generating Devise User model".black_on_yellow
 generate 'devise User'
+
 puts "Generating Devise views".black_on_yellow
 generate 'devise:views'
+
 puts "Installing CanCan".white_on_blue
 generate 'cancan:ability'
+
 rake 'db:migrate'
 
 git :add => '.'
