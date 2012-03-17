@@ -5,6 +5,7 @@ copy_static_file "vendor/assets/stylesheets/bootstrap.min.css"
 copy_static_file "vendor/assets/javascripts/bootstrap.min.js"
 copy_static_file "vendor/assets/images/glyphicons-halflings-white.png"
 copy_static_file "vendor/assets/images/glyphicons-halflings.png"
+copy_static_file "app/assets/stylesheets/global.sass"
 
 copy_static_file "public/apple-touch-icon.png"
 copy_static_file "public/favicon.ico"

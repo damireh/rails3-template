@@ -1,5 +1,5 @@
 # create rvmrc
-puts "Setting up RVM gemset and Ruby version".black_on_magenta
+puts "Setting up RVM gemset and Ruby version".white_on_magenta
 
 # strip colors in case rvm_pretty_print_flag is enabled
 rvm_list = `rvm list`.gsub(Regexp.new("\e\\[.?.?.?m"), '')
