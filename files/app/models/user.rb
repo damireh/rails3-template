@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  exted FriendlyId
+  extend FriendlyId
 
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
