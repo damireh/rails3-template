@@ -12,7 +12,7 @@ copy_static_file "public/humans.txt"
 copy_static_file "vendor/assets/javascripts/modernizr-2.5.3.min.js"
 
 inject_into_file "app/assets/stylesheets/application.css", " *= require bootstrap.min\n", before: " *= require_self"
-inject_into_file "app/assets/stylesheets/application.css", " *= require bootstrap.responsive.min\n", before: " *= require_self"
+inject_into_file "app/assets/stylesheets/application.css", " *= require bootstrap-responsive.min\n", before: " *= require_self"
 inject_into_file "app/assets/javascripts/application.js", "\n//= require bootstrap.min", after: "//= require jquery_ujs"
 
 git add: '.'
