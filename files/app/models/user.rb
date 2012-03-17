@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  exted FriendlyId
+
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
@@ -9,6 +11,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: { case_sensitive: false }
 
   has_attached_file :avatar
+  friendly_id :username, use: :slugged
 
   # allow users to sign in using their username or email address
   def self.find_for_database_authentication(warden_conditions)
