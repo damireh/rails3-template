@@ -31,14 +31,8 @@ remove_file 'app/assets/images/rails.png'
 apply "#{@partials}/_bootstrap.rb"
 apply "#{@partials}/_gems.rb"
 apply "#{@partials}/_minitest.rb"
+apply "#{@partials}/_git.rb"
 
-
-
-# setup git
-puts "Setting up Git".white_on_magenta
-git :init
-git :add => '.'
-git :commit => "-am 'initial commit'"
 
 # setup devise and cancan
 puts "Installing Devise".white_on_blue
