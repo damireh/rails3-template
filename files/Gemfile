@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'cancan'
 gem 'friendly_id'
+gem 'paperclip'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
