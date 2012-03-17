@@ -22,12 +22,7 @@ def copy_static_file(path)
 end
 
 apply "#{@partials}/_rvm.rb"
-
-# remove rails default files
-puts "Removing rails default files".white_on_red
-remove_file 'public/index.html'
-remove_file 'app/assets/images/rails.png'
-
+apply "#{@partials}/_cleanup.rb"
 apply "#{@partials}/_bootstrap.rb"
 apply "#{@partials}/_gems.rb"
 apply "#{@partials}/_minitest.rb"
