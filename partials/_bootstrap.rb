@@ -15,5 +15,5 @@ inject_into_file "app/assets/stylesheets/application.css", "*= require bootstrap
 inject_into_file "app/assets/stylesheets/application.css", "*= require bootstrap.min", before: "*= require bootstrap.responsive.min"
 inject_into_file "app/assets/javascripts/applications.js", "//= require bootstrap.min", after: "//= require jquery_ujs"
 
-git :add => '.'
-git :commit => "-am 'added twitter bootstrap'"
+git add: '.'
+git commit: "-am 'added twitter bootstrap'"

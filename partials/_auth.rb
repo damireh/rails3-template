@@ -13,5 +13,5 @@ generate 'cancan:ability'
 
 rake 'db:migrate'
 
-git :add => '.'
-git :commit => "-am 'installed devise and cancan, generated user model and devise views'"
+git add: '.'
+git commit: "-am 'installed devise and cancan, generated user model and devise views'"
