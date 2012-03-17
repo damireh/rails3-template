@@ -28,3 +28,6 @@ end
 
 task :stats => 'spec:statsetup'}
 end
+
+git add: '.'
+git commit: "-am 'setup test environment'"
