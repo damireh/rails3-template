@@ -10,7 +10,7 @@ end
 require "colored"
 require "bundler"
 
-# Directories for template partials and static files
+# Directories for recipes and static files
 @template_root = File.expand_path(File.join(File.dirname(__FILE__)))
 @recipes     = File.join(@template_root, 'recipes')
 @static_files = File.join(@template_root, 'files')
