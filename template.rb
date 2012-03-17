@@ -23,8 +23,8 @@ end
 
 apply "#{@partials}/_rvm.rb"
 apply "#{@partials}/_cleanup.rb"
+apply "#{@partials}/_git.rb"
 apply "#{@partials}/_bootstrap.rb"
 apply "#{@partials}/_gems.rb"
 apply "#{@partials}/_minitest.rb"
-apply "#{@partials}/_git.rb"
 apply "#{@partials}/_auth.rb"

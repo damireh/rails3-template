@@ -10,3 +10,10 @@ copy_static_file "public/apple-touch-icon.png"
 copy_static_file "public/favicon.ico"
 copy_static_file "public/humans.txt"
 copy_static_file "vendor/assets/javascripts/modernizr-2.5.3.min.js"
+
+inject_into_file "app/assets/stylesheets/application.css", "*= require bootstrap.responsive.min", before: "*= require_self"
+inject_into_file "app/assets/stylesheets/application.css", "*= require bootstrap.min", before: "*= require bootstrap.responsive.min"
+inject_into_file "app/assets/javascripts/applications.js", "//= require bootstrap.min", after: "//= require jquery_ujs"
+
+git :add => '.'
+git :commit => "-am 'added twitter bootstrap'"
