@@ -15,3 +15,12 @@ rake 'db:migrate'
 
 git add: '.'
 git commit: "-am 'installed devise and cancan, generated user model and devise views'"
+
+generate 'migration add_username_to_users username:string'
+run 'rake db:migrate'
+copy_static_file "app/models/user.rb"
+copy_static_file "config/initializers/devise.rb"
+copy_static_file "config/locales/en.yml"
+
+git add: '.'
+git commit: "-am 'allow users to sign in using their email or username'"
