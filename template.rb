@@ -12,7 +12,7 @@ require "bundler"
 
 # Directories for template partials and static files
 @template_root = File.expand_path(File.join(File.dirname(__FILE__)))
-@partials     = File.join(@template_root, 'recipes')
+@recipes     = File.join(@template_root, 'recipes')
 @static_files = File.join(@template_root, 'files')
 
 # copy a static file from the template into the new application
@@ -21,10 +21,11 @@ def copy_static_file(path)
   create_file path, File.read(File.join(@static_files, path))
 end
 
-apply "#{@partials}/rvm.rb"
-apply "#{@partials}/cleanup.rb"
-apply "#{@partials}/git.rb"
-apply "#{@partials}/bootstrap.rb"
-apply "#{@partials}/gems.rb"
-apply "#{@partials}/minitest.rb"
-apply "#{@partials}/auth.rb"
+apply "#{@recipes}/rvm.rb"
+apply "#{@recipes}/cleanup.rb"
+apply "#{@recipes}/git.rb"
+apply "#{@recipes}/bootstrap.rb"
+apply "#{@recipes}/gems.rb"
+apply "#{@recipes}/minitest.rb"
+apply "#{@recipes}/auth.rb"
+apply "#{@recipes}/pages.rb"
