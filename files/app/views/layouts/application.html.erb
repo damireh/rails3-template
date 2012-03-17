@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "modernizr.min.js" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="container">
+      <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+      <%= render 'layouts/header' %>
+
+      <div id="main" role="main">
+        <%= render 'shared/alerts' %>
+        <%= yield %>
+      </div>
+
+      <%= render 'layouts/footer' %>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

@@ -9,7 +9,7 @@ copy_static_file "vendor/assets/images/glyphicons-halflings.png"
 copy_static_file "public/apple-touch-icon.png"
 copy_static_file "public/favicon.ico"
 copy_static_file "public/humans.txt"
-copy_static_file "vendor/assets/javascripts/modernizr-2.5.3.min.js"
+copy_static_file "vendor/assets/javascripts/modernizr.min.js"
 
 inject_into_file "app/assets/stylesheets/application.css", " *= require bootstrap.min\n", before: " *= require_self"
 inject_into_file "app/assets/stylesheets/application.css", " *= require bootstrap-responsive.min\n", before: " *= require_self"
