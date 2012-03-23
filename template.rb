@@ -21,6 +21,14 @@ def copy_static_file(path)
   create_file path, File.read(File.join(@static_files, path))
 end
 
+# remove timestamped migrations
+inject_into_file 'config/application.rb', before: "  end\nend" do
+  %{  
+    # Turn off timestamped migrations
+    config.active_record.timestamped_migrations = false
+}
+end
+
 apply "#{@recipes}/rvm.rb"
 apply "#{@recipes}/cleanup.rb"
 apply "#{@recipes}/git.rb"
