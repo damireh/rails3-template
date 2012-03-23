@@ -6,6 +6,7 @@ This is the Rails template I use to facilitate the quick setup of new Rails appl
 ---
 * Sets up RVM with your choice of Ruby and gemset
 * Removes Rails default files (index.html, rails.png)
+* Removes timestamps from migrations
 * Sets up a Git Repo
 * Integrates [Twitter Bootstrap](http://twitter.github.com/bootstrap/) (v2.0.2)
 * Integrates parts of the [HTML5Boilerplate](http://html5boilerplate.com/) (v3.0)
