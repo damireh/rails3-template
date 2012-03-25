@@ -1,8 +1,7 @@
 <% if resource.errors.any? %>
   <div class="alert alert-block alert-error fade in" data-alert="alert">
     <a class="close" data-dismis="alert">&times;</a>
-    <h4 class="alert-heading">Oh Snap!</h4>
-    Change a few things up and try submitting again.
+    <strong>Oh Snap!</strong> Change a few things up and try submitting again.
     <ul>
       <% resource.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
