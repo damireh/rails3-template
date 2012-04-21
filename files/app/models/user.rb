@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
   attr_accessible :login, :username, :name, :email, :password, :password_confirmation, :remember_me
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name,     presence: true, length: { maximum: 50 }
   validates :username, presence: true, uniqueness: { case_sensitive: false }
 
   has_attached_file :avatar

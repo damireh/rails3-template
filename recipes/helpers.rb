@@ -17,5 +17,8 @@ copy_static_file "app/views/shared/_alerts.html.erb"
 copy_static_file "app/views/shared/_form_error_messages.html.erb"
 
 # add bootstrap themed templates
-copy_static_file "lib/templates/erb/scaffold/index.html.erb"
 copy_static_file "lib/templates/erb/scaffold/_form.html.erb"
+copy_static_file "lib/templates/erb/scaffold/index.html.erb"
+copy_static_file "lib/templates/erb/scaffold/edit.html.erb"
+copy_static_file "lib/templates/erb/scaffold/new.html.erb"
+copy_static_file "lib/templates/erb/scaffold/show.html.erb"

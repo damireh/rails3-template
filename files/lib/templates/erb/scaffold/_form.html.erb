@@ -3,6 +3,7 @@
     <legend><%= singular_table_name.capitalize %></legend>
     
     <%%= render 'shared/form_error_messages', resource: @<%= singular_table_name %> %>
+
     <% attributes.each do |attribute| %>
     <div class="control-group">
       <%%= f.label :<%= attribute.name %>, class: "control-label" %>
