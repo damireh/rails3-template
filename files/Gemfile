@@ -19,6 +19,7 @@ end
 group :development do
   gem 'wirb'
   gem 'debugger'
+  gem 'quiet_assets'
 end
 
 group :test do
