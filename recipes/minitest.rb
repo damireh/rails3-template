@@ -19,7 +19,8 @@ class MiniTest::Spec
   end
 end
 
-Turn.config.format = :cue}
+Turn.config.format = :cue
+Turn.config.natural = true}
 end
 
 rakefile 'minitest.rake' do
