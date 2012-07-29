@@ -1,15 +1,15 @@
-<%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post, :class => 'form-horizontal' }) do |f| %>
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post, class: 'form-horizontal' }) do |f| %>
   <%= devise_error_messages! %>  
   <fieldset>
     <legend>Resend unlock instructions</legend>
     
     <div class="control-group">
-      <%= f.label :email, :class => 'control-label' %>
+      <%= f.label :email, class: 'control-label' %>
       <div class="controls"><%= f.email_field :email %></div>
     </div>
     
     <div class="form-actions">
-      <%= f.submit "Resend unlock instructions", :class => 'btn' %>
+      <%= f.submit "Resend unlock instructions", class: 'btn' %>
     </div>
   </fieldset>
 <% end %>

@@ -1,21 +1,21 @@
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
   <fieldset>
     <legend>Sign In</legend>
     
     <div class="control-group">
-      <%= f.label :login, :class => 'control-label' %>
+      <%= f.label :login, class: 'control-label' %>
       <div class="controls"><%= f.text_field :login %></div>
     </div>
     
     <div class="control-group">
-      <%= f.label :password, :class => 'control-label' %>
+      <%= f.label :password, class: 'control-label' %>
       <div class="controls"><%= f.password_field :password %></div>
     </div>
     
     <% if devise_mapping.rememberable? %>
       <div class="control-group">
         <div class="controls">
-          <%= f.label :remember_me, :class => 'checkbox' do %>
+          <%= f.label :remember_me, class: 'checkbox' do %>
             <%= f.check_box :remember_me %> Remember me
           <% end %>
         </div>
@@ -23,7 +23,7 @@
     <% end %>
     
     <div class="form-actions">
-      <%= f.submit 'Sign in', :class => 'btn' %>
+      <%= f.submit 'Sign in', class: 'btn' %>
     </div>
   </fieldset>
 <% end %>
