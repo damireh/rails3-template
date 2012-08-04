@@ -17,9 +17,9 @@ group :assets do
 end
 
 group :development do
-  gem 'wirb'
   gem 'debugger'
   gem 'quiet_assets'
+  gem 'rails-footnotes'
 end
 
 group :test do
