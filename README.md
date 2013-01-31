@@ -8,14 +8,14 @@ This is the Rails template I use to facilitate the quick setup of new Rails appl
 * Removes Rails default files (index.html, rails.png)
 * Removes timestamps from migrations
 * Sets up a Git Repo
-* Integrates [Twitter Bootstrap](http://twitter.github.com/bootstrap/) (v2.0.2)
-* Integrates parts of the [HTML5Boilerplate](http://html5boilerplate.com/) (v3.0)
+* Integrates [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+* Integrates parts of the [HTML5Boilerplate](http://html5boilerplate.com/)
 * Adds Thin, Devise, CanCan, FriendlyId, Paperclip, Debugger and Minitest to Gemfile
 * Sets up Test environment using MiniTest (use `rake test` to run your tests)
 * Sets up Devise and CanCan, and generates a User model
 * Sets up Paperclip and adds Avatar to User
 * Sets up FriendlyId and adds slug on username
-* Adds alerts and form error messages partials
+* Adds bootstrap themed alerts and form error message partials
 * Generates welcome controller with root route set to index action
 
 ### Prerequisites
