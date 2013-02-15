@@ -27,7 +27,7 @@ append_to_file 'Rakefile' do
   end
 end
 
-task :stats => 'spec:statsetup'}
+task stats: 'spec:statsetup'}
 end
 
 git add: '.'
