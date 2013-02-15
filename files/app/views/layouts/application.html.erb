@@ -10,9 +10,8 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body id="<%= params[:controller] %>" class="<%= params[:action] %>">
+  <body id="<%= params[:controller].parameterize %>" class="<%= params[:action] %>">
     <div class="container">
-      <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
       <%= render 'layouts/header' %>
 
       <div id="main" role="main">
